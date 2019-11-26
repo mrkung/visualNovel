@@ -76,13 +76,14 @@
     text-align: center;
     justify-content: center;
     color: white;
+    /* border: 1px solid red; */
 }
 
 .btn {
     background-color: rgb(37, 117, 155);
     margin: 16px;
-    padding: 10px 0;
-    width: 100px;
+    padding: 10px 10px;
+    width: 150px;
 }
 
 .btn:hover {
@@ -96,13 +97,18 @@
     flex-direction: column;
     width: 80%;
     margin: 1em auto 0 auto;
+    /* border: 1px solid blue; */
 }
 
 .story img {
-    width: 50%;
+    height: 300px;
     margin: 16px auto 0 auto;
 }
 
 .invisible {
     display: none;
+}
+
+.prehistoric-bg {
+    background-image: url("images/prehistoric-land.jpg");
 }
