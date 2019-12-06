@@ -14,9 +14,10 @@ document.querySelector(".story").innerHTML = "<h1 style='text-align:center'>The 
 
 document.querySelector(".start-btn").addEventListener("click", function() {
     soundStart.play(); // START GAME
-    // document.querySelector('.container').classList.add("prehistoric-bg"); // Change BG of game
+    // document.querySelector('.container').classList.add("game-bg"); // Change BG of game
     // Story
     document.querySelector(".story").innerHTML = "<p>You wake up to the sound of screeching birds. You never heard birds so loud before. Your back is sore and you look around. You realize you are in some strange looking land from prehistoric times. Look out! A dinosaur suddenly appears by your side. Will you talk to him?</p>";
+    // <img src='images/scary-dino.jpg'></img>
     // Erase buttons
     document.querySelector(".start-btn").classList.add("invisible");
     // Show next buttons
@@ -33,6 +34,8 @@ document.querySelector(".talk-btn").addEventListener("click", function() {
     // Erase buttons
     document.querySelector(".talk-btn").classList.add("invisible");
     document.querySelector(".runAway-btn").classList.add("invisible");
+    // Reset button
+    document.querySelector(".reset-btn").classList.remove("invisible");
 });
 
 // Run from Dino event
@@ -47,8 +50,6 @@ document.querySelector(".runAway-btn").addEventListener("click", function() {
     // Show next buttons
     document.querySelector(".giveCandy-btn").classList.remove("invisible");
     document.querySelector(".apologize-btn").classList.remove("invisible");
-    // Picture
-    document.querySelector(".pic1").classList.add("invisible");
 });
 
 // Give Candy
@@ -60,6 +61,8 @@ document.querySelector(".giveCandy-btn").addEventListener("click", function() {
     // Erase buttons
     document.querySelector(".apologize-btn").classList.add("invisible");
     document.querySelector(".giveCandy-btn").classList.add("invisible");
+    // Reset button
+    document.querySelector(".reset-btn").classList.remove("invisible");
 });
 
 // Apologize
@@ -81,7 +84,7 @@ var name = 'hero';
 
 document.querySelector(".promptName-btn").addEventListener("click", function() {
     // Story
-    soundHappy.play();
+    soundHappy.play(); // ADVANCE INPUT
     name = prompt("Enter your name");
     document.querySelector(".story").innerHTML = "So your name is " + name + "? What a beautiful name! Where would you like to go together?";
     // Erase buttons
@@ -100,6 +103,8 @@ document.querySelector(".eatStudents-btn").addEventListener("click", function() 
     // Erase buttons
     document.querySelector(".eatStudents-btn").classList.add("invisible");
     document.querySelector(".computerStore-btn").classList.add("invisible");
+    // Reset button
+    document.querySelector(".reset-btn").classList.remove("invisible");
 });
 
 // Computer Store
@@ -127,6 +132,8 @@ document.querySelector(".mac-btn").addEventListener("click", function() {
     document.querySelector(".mac-btn").classList.add("invisible");
     document.querySelector(".pc-btn").classList.add("invisible");
     document.querySelector(".linux-btn").classList.add("invisible");
+    // Reset button
+    document.querySelector(".reset-btn").classList.remove("invisible");
 });
 
 // Gaming PC
@@ -139,6 +146,8 @@ document.querySelector(".pc-btn").addEventListener("click", function() {
     document.querySelector(".mac-btn").classList.add("invisible");
     document.querySelector(".pc-btn").classList.add("invisible");
     document.querySelector(".linux-btn").classList.add("invisible");
+    // Show next buttons
+    document.querySelector(".reset-btn").classList.remove("invisible");
 });
 
 // Wood PC
@@ -152,3 +161,17 @@ document.querySelector(".linux-btn").addEventListener("click", function() {
     document.querySelector(".pc-btn").classList.add("invisible");
     document.querySelector(".linux-btn").classList.add("invisible");
 });
+
+// RESET GAME
+
+document.querySelector(".reset-btn").addEventListener("click", reset);
+
+function reset() {
+    soundAdvance.play();
+    // Show Title Screen
+    document.querySelector(".story").innerHTML = "<h1 style='text-align:center'>The Wrath of Dino</h1><p style='text-align:center;'>A Visual Novel<br>Developed by: Mr. Kung</p><img src='images/mrdino.gif'></img>";
+    // Show START button
+    document.querySelector(".start-btn").classList.remove("invisible");
+    // Erase buttons
+    document.querySelector(".reset-btn").classList.add("invisible");
+}
