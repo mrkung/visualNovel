@@ -73,17 +73,22 @@
 
 .btn-container {
     display: flex;
-    text-align: center;
     justify-content: center;
-    color: white;
     /* border: 1px solid red; */
 }
 
 .btn {
     background-color: rgb(37, 117, 155);
+    /* background-color: rgb(46, 85, 24); */
     margin: 16px;
     padding: 10px 10px;
     width: 150px;
+    text-align: center;
+    color: white;
+}
+
+.reset-btn {
+    background-color: rgb(169, 211, 228);
 }
 
 .btn:hover {
@@ -101,7 +106,7 @@
 }
 
 .story img {
-    height: 300px;
+    height: 250px;
     margin: 16px auto 0 auto;
 }
 
@@ -109,6 +114,6 @@
     display: none;
 }
 
-.prehistoric-bg {
-    background-image: url("images/prehistoric-land.jpg");
+.game-bg {
+    background-image: url("images/grassland.jpg");
 }
